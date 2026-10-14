@@ -1,1 +1,3 @@
 pandas==2.2.3
+sqlite-minutils
+starlette==0.37.2
