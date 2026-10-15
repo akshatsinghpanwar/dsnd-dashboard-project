@@ -1,8 +1,16 @@
+import sys
+from pathlib import Path
+
+if __package__ in (None, ''):
+    project_root = Path(__file__).resolve().parent.parent
+    if str(project_root) not in sys.path:
+        sys.path.insert(0, str(project_root))
+
 from fasthtml import FastHTML
 from fasthtml.common import *
 import matplotlib.pyplot as plt
 
-from employee_events import QueryBase, Employee, Team
+from employee_events import Employee, Team
 from report.utils import load_model
 
 from report.base_components import (
@@ -129,5 +137,3 @@ async def update_data(r):
 
 if __name__ == '__main__':
     serve()
-
-serve()
